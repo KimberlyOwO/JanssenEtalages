@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
+    <ion-title>Etalages</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="allEtalageMap()">
+        <ion-icon name="pin"></ion-icon>Alle etalages
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-label position="floating">Zoek etalage</ion-label>
+      <ion-input type="text" placeholder="Zoeken..." (input)="searchEtalage($event)"></ion-input>
+    </ion-item>
+
+    <ion-list *ngIf="!isfiltered">
+      <ion-item *ngFor="let etalage of EtalageData" (click)="getEtalageDetails(etalage)">
+        <ion-icon name="pin"></ion-icon>{{ etalage.name }}
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="isfiltered">
+      <ion-item *ngFor="let etalage of filteredEtalage" (click)="getEtalageDetails(etalage)">
+        <h2>
+          <ion-icon name="pin"></ion-icon>{{ etalage.name }}
+        </h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
