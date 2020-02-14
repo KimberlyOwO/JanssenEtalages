@@ -14,4 +14,4 @@ import { AllEtalagePage } from './tab4.page';
   ],
   declarations: [AllEtalagePage]
 })
-export class Tab4PageModule {}
+export class AllEtalagePageModule {}

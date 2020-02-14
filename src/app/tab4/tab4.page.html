@@ -3,10 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Etalages</ion-title>
+    <ion-title text-center>Kaart <ion-icon name="map"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-card class="ion-padding">
+    <h3>Etalage : {{ etalage.name }}</h3>
+  </ion-card>
   <div #map id="map"></div>
 </ion-content>

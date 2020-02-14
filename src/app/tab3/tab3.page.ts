@@ -20,7 +20,7 @@ export class Tab3Page {
         this.etalageService.setEtalage(this.etalageData);
       });
 }
-searchMaps(event) {
+searchEtalage(event) {
   if (event.target.value.length > 2) {
     const filteredJson = this.etalageData.filter((row) => {
       if (row.state.indexOf(event.target.value) !== -1) {
